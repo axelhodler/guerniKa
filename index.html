@@ -6,7 +6,7 @@
       }
       #image_info {
         position: absolute;
-        bottom: 400px;
+        top: 100px;
         left: 50px;
         color: red;
         font-size: 30
@@ -18,5 +18,14 @@
       <img alt="whatever" src="./image.jpg"/>
       <div id="image_info">Some Explanation</div>
     </div>
+    <script>
+      const changeAnnotationPosition = (event) => {
+          const image = document.getElementById("image_info")
+          image.style.left = event.pageX
+          image.style.top = event.pageY
+      }
+
+      document.addEventListener("click", changeAnnotationPosition);
+    </script>
   </body>
 </html>
